@@ -21,7 +21,7 @@ Version: Python3
 ```
 pip3 install -r requirements.txt
 ```
-## :dolphin:****
+## :dolphin:**运行截图**
 > - **查看APP榜单数据 - https://www.qimai.cn/rank**<br><br>
 ![enter image description here](Pic/data.png)
 
