@@ -10,9 +10,8 @@
 ****
 ## :dolphin:声明
 七麦数据(原ASO100)是七麦科技推出的国内专业的移动应用数据分析平台，是国内同时打通App数据、微信公众号数据、小程序数据的数据分析平台。<br>
-```diff
-+ **抱歉，软件仅用于学习交流，所以在此我并没有公开analysis参数解密文件(encrypt.js)。感谢大家！**
-```
+> <font color="red">抱歉，软件仅用于学习交流，所以在此我并没有公开analysis参数解密文件(encrypt.js)。感谢大家！</font>
+
 ## :dolphin:介绍
 该项目为爬取[七麦数据](https://www.qimai.cn/rank)平台APP榜单数据
 - 爬虫文件:Spiders目录下的qimai.py
