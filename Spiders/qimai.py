@@ -30,6 +30,7 @@ js_params = json.dumps(params)
 analysis = jsdata.call('get_analysis',url,js_params)
 form = json.loads(analysis)
 headers = {
+    'Referer':'https://www.qimai.cn/rank',
     'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
 }
 html = requests.get(url,params=form,headers=headers)
