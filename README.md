@@ -14,8 +14,9 @@
 
 ## :dolphin:介绍
 ### 该项目为爬取[七麦数据](https://www.qimai.cn/rank)平台APP榜单数据
-- 爬虫文件:Spiders目录下的qimai.py
-- JS解密文件:Spiders目录下的encrypt.js
+- **20181112 - 增加七麦数据的登录代码(qimai_login.py)，因为有小伙伴反映有些数据(例如关键字排名搜索需要用户登录才可以)**
+- **爬虫文件:Spiders目录下的qimai.py**
+- **JS解密文件:Spiders目录下的encrypt.js**
 ## :dolphin:运行环境
 Version: Python3
 ## :dolphin:安装依赖库
@@ -27,6 +28,7 @@ pip3 install -r requirements.txt
 ![enter image description here](Pic/data.png)
 
 > - **运行截图**<br><br>
+![enter image description here](Pic/login.png)
 ![enter image description here](Pic/run.png)
 ![enter image description here](Pic/data_1.png)
 ## :dolphin:**总结**
