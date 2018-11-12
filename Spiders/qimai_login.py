@@ -16,7 +16,6 @@ jsdata = execjs.compile(jsdata)
 
 
 def qimai_login():
-    # 获取set-cookie
     # 1
     url = 'https://www.qimai.cn/account/signin/r/%2F'
     headers = {
@@ -26,21 +25,21 @@ def qimai_login():
     html = req.get(url, headers=headers)
     # 2
     url = 'https://api.qimai.cn/account/pageCheck/type/signin'
-    analysis = jsdata.call('get_analysis', url, '{}')  # 登录不用传递params,为空{}
+    analysis = jsdata.call('get_analysis', url, '{}')
     analysis = json.loads(analysis).get('analysis')
     url = 'https://api.qimai.cn/account/pageCheck/type/signin?analysis={}'.format(urllib.parse.quote(analysis))
     html = req.get(url, headers=headers)
     print(html.text)
     # 3
     url = 'https://api.qimai.cn/account/userinfo'
-    analysis = jsdata.call('get_analysis', url, '{}')  # 登录不用传递params,为空{}
+    analysis = jsdata.call('get_analysis', url, '{}')
     analysis = json.loads(analysis).get('analysis')
     url = 'https://api.qimai.cn/account/userinfo?analysis={}'.format(urllib.parse.quote(analysis))
     html = req.get(url, headers=headers)
     print(html.text)
     # 4
     url = 'https://api.qimai.cn/index/index'
-    analysis = jsdata.call('get_analysis', url, '{}')  # 登录不用传递params,为空{}
+    analysis = jsdata.call('get_analysis', url, '{}')
     analysis = json.loads(analysis).get('analysis')
     url = 'https://api.qimai.cn/index/index?analysis={}'.format(urllib.parse.quote(analysis))
     html = req.get(url, headers=headers)
@@ -53,7 +52,7 @@ def qimai_login():
     # 6 提交登录
     captcha = input('请输入验证码:')
     url = 'https://api.qimai.cn/account/signinForm'
-    analysis = jsdata.call('get_analysis', url, '{}')  # 登录不用传递params,为空{}
+    analysis = jsdata.call('get_analysis', url, '{}')
     analysis = json.loads(analysis).get('analysis')
     login_url = 'https://api.qimai.cn/account/signinForm?analysis={}'.format(urllib.parse.quote(analysis))
     data = {
