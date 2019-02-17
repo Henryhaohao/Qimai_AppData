@@ -123,7 +123,7 @@ var n = i();
 return String[n](a)
 }
 function f(a) {
-var n = "a12c0fa6ab9119bc90e4ac7700796a53";
+var n = "00000008d78d46a";
 a = a.split("");
 for (var e = a.length,
 t = n.length,
@@ -159,4 +159,5 @@ params = JSON.stringify(params);
 return params;
 }
 
-
+// 20190217 加密更新
+//  f()函数中的n = 'a12c0fa6ab9119bc90e4ac7700796a53'  改成  n = '00000008d78d46'

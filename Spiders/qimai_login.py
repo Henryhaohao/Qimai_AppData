@@ -10,7 +10,7 @@ __author__ = 'Henry'
 import requests, execjs, json, urllib.parse, time
 
 req = requests.Session()
-with open('encrypt.js', encoding='utf-8') as f:
+with open('encrypt_20190217.js', encoding='utf-8') as f:
     jsdata = f.read()
 jsdata = execjs.compile(jsdata)
 
