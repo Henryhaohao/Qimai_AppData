@@ -1,6 +1,6 @@
 # !/user/bin/env python
 # -*- coding:utf-8 -*- 
-# time: 2018/10/2--14:07
+# time: 2019/07/16--14:07
 __author__ = 'Henry'
 
 
@@ -12,28 +12,32 @@ __author__ = 'Henry'
 
 import requests,execjs,json
 
-with open('encrypt_20190217.js',encoding='utf-8') as f:
+with open('encrypt_20190716.js',encoding='utf-8') as f:
     jsdata = f.read()
 jsdata = execjs.compile(jsdata)
 
 # 只需要传入url(brand_id)和params(筛选条件)
-url = 'https://api.qimai.cn/rank/indexPlus/brand_id/2'
+url = 'https://api.qimai.cn/rank/indexPlus/brand_id/1'
 params = {
     'brand':'all',
-    'genre':'6014',
     'device':'iphone',
-    'country':'us',
-    'date':'2018-10-02',
-    'page':'1' # 1或'1'都行
+    'country':'cn',
+    'genre':'5000',
+    'date':'2019-07-16',
 }
-js_params = json.dumps(params)
-analysis = jsdata.call('get_analysis',url,js_params)
-form = json.loads(analysis)
+params_str = []
+for i in params:
+    params_str.append(params[i])
+# print(params_str)
+analysis = jsdata.call('get_analysis',url,params_str)
+# print(analysis)
+params['analysis'] = analysis
+# print(params)
 headers = {
     'Referer':'https://www.qimai.cn/rank',
     'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
 }
-html = requests.get(url,params=form,headers=headers)
+html = requests.get(url,params=params,headers=headers)
 print(html.json())
 
 
